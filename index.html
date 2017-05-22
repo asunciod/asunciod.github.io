@@ -113,9 +113,9 @@
                         </div>
                         <div>
                             <div class="pv-20">
-                                <h3>jQUERY</h3>
+                                <h3>jQuery</h3>
                                 <p>
-                                    In order for developers to interact with an API, they need a set of programming tools. Ordinarily, a developer is able to use an API by way of JavaScript, but this how-to guide
+                                    In order for developers to interact with an API, they need a set of programming tools. Ordinarily, a developer would be able to use an API by way of JavaScript, but this How-To Guide
                                     will be making use of jQuery.
                                 </p>
                                 <h4>What is jQuery?</h4>
@@ -126,7 +126,8 @@
                                 </p>
                                 <h4>How to Include jQuery</h4>
                                 <p>
-                                    Including jQuery into your project is very simple. You can either <a href="https://jquery.com/download/" target="_blank">download</a> the latest jQuery
+                                    To use jQuery, we need to include the library framework into our project. Including jQuery is very simple. 
+                                    You can either <a href="https://jquery.com/download/" target="_blank">download</a> the latest jQuery
                                     file from their website or you can use a <a href="https://code.jquery.com/" target="_blank">content delivery network (CDN) file</a>, as demonstrated in the
                                     image below.
                                     <img src="img/jquery_include.PNG" class="width-100per mh-1515" />
@@ -141,9 +142,8 @@
                             <div class="pv-20">
                                 <h3>Ajax</h3>
                                 <p>
-                                    The main reason why we are using jQuery is so that we can use a function called AJAX that simplifies making API calls.
-                                    In JavaScript, you would need to write additional code to setup an API call, but with the jQuery.ajax() function,
-                                    the setup is much simpler.
+                                    The main reason why we are using jQuery is so that we can use of the jQuery.Ajax() method, which simplifies making API calls.
+                                    In JavaScript, an API call would require much more code to setup, but with the jQuery.ajax(), the setup is more streamlined.
                                 </p>
                                 <h4>
                                     What is Ajax?
@@ -209,6 +209,30 @@ $.ajax({
                         </div>
                         <div>
                             <div class="pv-20">
+                                <h4>GET Request Structure Continued</h4>
+                                <p>
+                                    The previous URL structure example is very common, but with the increase of URL routing,
+                                    many server-side applications are able to read a URL and map it to an API request path. This means that
+                                    some GET requests do not need a name and value pair but will instead return data based
+                                    on the route of the URL.  
+                                    <div class="example-code">
+                                        https://pokeapi.co/api/v2/pokemon/{id or name}
+                                    </div>
+                                    The structure consists of the API URL path plus an attribute route
+                                    <div class="example-code">
+                                        Endpoint: https://pokeapi.co/api/v2/pokemon/
+                                    </div>
+                                    <div class="example-code">
+                                        Route options: {id or name}
+                                    </div>
+                                </p>
+                                <a href="http://www.tutorialsteacher.com/webapi/web-api-routing" target="_blank">
+                                    Learn more about Web API routing &rarr;
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
                                 <h3>JSON</h3>
                                 <p>
                                     JSON, or JavaScript Object Notation, is a minimal, readable format for structuring data. It is used primarily to transmit data between a server and
@@ -222,12 +246,6 @@ $.ajax({
                                 <a href="http://www.json.org/" class="link-spacing" target="_blank">
                                     Learn more about JSON &rarr;
                                 </a>
-                                <script type="application/json" id="stuff">
-                                    {
-                                    "unicorns": "awesome",
-                                    "abc": [1, 2, 3]
-                                    }
-                                </script>
 <pre>
 <code>
     { 
