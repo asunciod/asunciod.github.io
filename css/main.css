@@ -1,0 +1,205 @@
+body {
+  font-size: 16px;
+  /*font-smooth: never;
+  -webkit-font-smoothing: none;*/
+  font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; }
+
+/* utility styles */
+h1 {
+  font-size: 48px; }
+
+h2 {
+  font-size: 46px; }
+
+h3 {
+  font-size: 36px; }
+
+h4 {
+  font-size: 22px; }
+
+.no-margin-top, #main-hero h1 {
+  margin-top: 0; }
+
+.no-margin-bottom {
+  margin-bottom: 0; }
+
+.no-padding-top {
+  padding-top: 0; }
+
+.no-padding-bottom {
+  padding-bottom: 0; }
+
+.no-padding {
+  padding: 0; }
+
+.pv-20 {
+  padding: 0 20px; }
+
+.padding-40 {
+  padding: 40px; }
+
+.mh-1515 {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
+.mh-1500 {
+  margin-top: 15px;
+  margin-bottom: 0; }
+
+.display-ib {
+  display: inline-block; }
+
+.display-b {
+  display: block; }
+
+.link-spacing {
+  display: inline-block;
+  margin-bottom: 15px; }
+
+.opacity-7 {
+  opacity: .7; }
+
+.bg-size-cover, #main-hero, #main-intro, #main-setup, #main-demo {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.no-border-radius {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0; }
+
+.display-flex-center {
+  display: flex;
+  align-items: center; }
+
+.float-none {
+  float: none; }
+
+.cl-white {
+  color: white; }
+
+.bg-cl-d4d4d4 {
+  background-color: #d4d4d4; }
+
+.bg-cl-white {
+  background-color: white; }
+
+.bg-cl-eee-op-9 {
+  background: rgba(238, 238, 238, 0.9); }
+
+.bg-cl-fff-op-9 {
+  background: rgba(255, 255, 255, 0.9); }
+
+.bg-cl-000-op-9 {
+  background: rgba(0, 0, 0, 0.9); }
+
+/* fonts*/
+.fs-18 {
+  font-size: 18px; }
+
+.fs-24 {
+  font-size: 24px; }
+
+.pos-rel {
+  position: relative; }
+
+.width-100per {
+  width: 100%; }
+
+/* main styles */
+.set-height-js {
+  min-height: 750px; }
+
+.example-code {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  background-color: #f1f1f1;
+  border: 1px dotted #CCCCCC;
+  margin: 15px 0;
+  width: 700px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: left;
+  border-left: 5px solid #636363;
+  line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace; }
+
+#main-hero {
+  background: url("../img/bulbasaur_hero.jpg") no-repeat center center; }
+
+#main-intro {
+  background-image: url("../img/pokemon_gif1.gif"); }
+
+#main-ttk {
+  background-color: #549FBF; }
+  #main-ttk a {
+    color: lightgreen;
+    font-weight: bold; }
+  #main-ttk p {
+    font-size: 16px; }
+
+#main-setup {
+  /*background-image: url('../img/spheal_hero.png');*/
+  background-image: url("../img/pokemon_seasons_gif.gif");
+  color: white; }
+
+.pokemon-ele {
+  float: left;
+  display: block;
+  text-align: center;
+  width: 100%; }
+  .pokemon-ele img {
+    width: 60px; }
+  .pokemon-ele span {
+    font-size: 12px;
+    display: block; }
+
+#main-demo {
+  background-image: url("../img/snorlax_hero.jpg"); }
+
+.pokemon-ele {
+  color: #333;
+  font-weight: bold;
+  padding-bottom: 10px; }
+  .pokemon-ele:hover {
+    background-color: lightgray;
+    text-decoration: none; }
+
+#pokemon-display {
+  background-color: darkcyan;
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 20px;
+  color: white; }
+
+.loading-gif {
+  display: none;
+  text-align: center; }
+  .loading-gif span {
+    display: block; }
+
+.pikachu-loading {
+  width: 100%;
+  max-width: 100px; }
+
+.selected {
+  background-color: darkcyan;
+  color: white; }
+  .selected:active, .selected:visited {
+    color: white; }
+
+.section-trigger {
+  font-size: 20px;
+  display: inline-block;
+  margin-top: 20px; }
+
+.well {
+  background-image: none !important; }

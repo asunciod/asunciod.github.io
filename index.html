@@ -3,9 +3,409 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Pokemon API How-To Guide</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 </head>
 <body>
-    test
+    
+    <section id="hero">
+        <div id="main-hero" class="container-fluid set-height-js display-flex-center">
+            <div class="col-xs-8 float-none center-block padding-40">
+                <div class="col-12">
+                    <h1>Pok&eacute;mon API</h1>
+                </div>
+
+                <div class="col-xs-5">
+                    <div>
+                        <h3 class="cl-white"><b>A How-To Guide to Pok&eacute;mon Data</b></h3>
+                        <h4><b>By David Asuncion</b></h4>
+                        <a class="section-trigger" href="#about"><b>Let's Get Started &darr;</b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div id="main-intro" class="container-fluid set-height-js display-flex-center">
+            <div class="col-xs-8 float-none center-block padding-40 bg-cl-eee-op-9">
+                <div class="col-12">
+                    <h2 class="no-margin-top">Introduction</h2>
+                </div>
+
+                <div class="col-xs-10">
+                    <div>
+                        <h3>
+                            What is Pok&eacute;mon?
+                        </h3>
+                        <p>
+                            Pok&eacute;mon, or Pocket Monsters, is franchise created in 1995 by Satoshi Tajiri, which centers around fictional creatures called "Pok&eacute;mon".
+                            These creatures can then be captured by humans, or Pok&eacute;mon trainers, in order to train and battle against other trainers.
+                            The franchise started with two games for the original Gameboy and has now expanded into trading cards, animated tv shows, movies and toys.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Pok%C3%A9mon" target="_blank">
+                            Learn more about Pok&eacute;mon &rarr;
+                        </a>
+                    </div>
+                    <div>
+                        <h3>
+                            What is Pok&eacute;api?
+                        </h3>
+                        <p>
+                            For this How-To guide, we will be using a Pok&eacute;mon API. The data we receive will be coming from Pokeapi, which is a
+                            website that provides a RESTful API interface to thousands of lines of data related to Pok&eacute;mon.
+                        </p>
+                        <a href="https://pokeapi.co/about/" target="_blank">
+                            Learn more about Pok&eacute;api &rarr;
+                        </a>
+                    </div>
+
+                    <a class="section-trigger" href="#things-to-know"><b>Continue to Things to Know &darr;</b></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="things-to-know" class="pos-rel">
+        <div id="main-ttk" class="container-fluid set-height-js display-flex-center">
+            <div class="col-xs-10 float-none center-block">
+                <div class="col-xs-12">
+                    <h2 class="no-margin-top">Things to Know</h2>
+                </div>
+                <div class="col-xs-12">
+                    <div class="single-item">
+                        <div>
+                            <div class="pv-20">
+                                <h3>What is an API?</h3>
+                                <p>
+                                    An API (Application Programming Interface) is a set of interfaces (in this case, url links) that are publicly available, that allow developers to interact with an application.
+                                    Through this interaction with the interfaces, developers are able to send and receive data. For our usage, we will be using a URL interface in order to receive data.
+                                </p>
+                                <h4>
+                                    API via URL links
+                                </h4>
+                                <p>
+                                    There are some very popular and common APIs that developers use, such as <a href="https://developers.google.com/maps/" target="_blank">Google Maps</a>,
+                                    <a href="https://developers.google.com/youtube/" target="_blank">YouTube</a> and <a href="https://dev.twitter.com/" target="_blank">Twitter</a>.
+                                    Each of these APIs use URLs to get and post data.
+                                </p>
+                                <p>
+                                    For the Pokeapi, there are many URLs that can get data. By using a URL, such as <b>https://pokeapi.co/api/v2/item/{id or name}</b>, and combining it with a script call,
+                                    we can get items from the Pok&eacute;mon game by either entering an id or name. A more detailed example of an API call will be found below.
+                                </p>
+                                <a href="https://medium.freecodecamp.com/what-is-an-api-in-english-please-b880a3214a82" target="_blank">
+                                    Learn more about API &rarr;
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>jQUERY</h3>
+                                <p>
+                                    In order for developers to interact with an API, they need a set of programming tools. Ordinarily, a developer is able to use an API by way of JavaScript, but this how-to guide
+                                    will be making use of jQuery.
+                                </p>
+                                <h4>What is jQuery?</h4>
+                                <p>
+                                    jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation,
+                                    event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a
+                                    combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
+                                </p>
+                                <h4>How to Include jQuery</h4>
+                                <p>
+                                    Including jQuery into your project is very simple. You can either <a href="https://jquery.com/download/" target="_blank">download</a> the latest jQuery
+                                    file from their website or you can use a <a href="https://code.jquery.com/" target="_blank">content delivery network (CDN) file</a>, as demonstrated in the
+                                    image below.
+                                    <img src="img/jquery_include.png" class="width-100per mh-1515" />
+                                </p>
+
+                                <a href="https://jquery.com/" target="_blank">
+                                    Learn more about jQuery &rarr;
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>Ajax</h3>
+                                <p>
+                                    The main reason why we are using jQuery is so that we can use a function called AJAX that simplifies making API calls.
+                                    In JavaScript, you would need to write additional code to setup an API call, but with the jQuery.ajax() function,
+                                    the setup is much simpler.
+                                </p>
+                                <h4>
+                                    What is Ajax?
+                                </h4>
+                                <p>
+                                    Ajax stands for Asynchronous JavaScript and XML. Ajax requests are triggered by JavaScript code; your code sends a request to a URL,
+                                    and when it receives a response, a callback function can be triggered to handle the response. Because the request is asynchronous,
+                                    the rest of your code continues to execute while the request is being processed, so it's imperative that a callback be
+                                    used to handle the response.
+                                </p>
+                                <h4>
+                                    Using jQuery.ajax()
+                                </h4>
+                                <p>
+                                    In the code below, you can see how easy it is to make an API call using jQuery. The <a href="http://api.jquery.com/jquery.ajax/" target="_blank">jQuery Ajax API</a> accepts quite a number of
+                                    optional arguments, but the minimum requirement is actually just a URL. The default method value is "GET" and the default
+                                    dataType is "json".
+                                </p>
+<pre>
+<code>
+$.ajax({
+    url: "test.html",
+    method: "GET",
+    dataType: "json"
+})
+    .done(function(){})
+    .fail(function(){});
+</code>
+</pre>
+                                <a href="https://learn.jquery.com/ajax/" target="_blank">
+                                    Learn more about Ajax &rarr;
+                                </a>
+
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>GET Request</h3>
+                                <p>
+                                    The GET request is a Hyptertext Transfer Protocol (HTTP) method. HTTP is designed to enable communications
+                                    between clients and servers. When making API calls, the client is the browser and the server will be the
+                                    Pok&eacute;api server. When using the GET method, we are requesting data from a specified source.
+                                </p>
+                                <h4>Structure</h4>
+                                <p>
+                                    When making a GET request, we use a URL which identifies the specified source. For example, we will be using the following URL
+                                    for one of the API calls later on in this guide.
+                                    <div class="example-code">
+                                        https://pokeapi.co/api/v2/pokedex/1/?name=national
+                                    </div>
+                                    The structure consists of the API URL path plus a query string consisting of name and value pairs
+                                    <div class="example-code">
+                                        Endpoint: https://pokeapi.co/api/v2/pokedex/1/
+                                    </div>
+                                    <div class="example-code">
+                                        Name/value pair: ?name=national
+                                    </div>
+                                </p>
+                                <a href="http://blog.teamtreehouse.com/the-definitive-guide-to-get-vs-post" target="_blank">
+                                    Learn more about HTTP methods &rarr;
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>JSON</h3>
+                                <p>
+                                    JSON, or JavaScript Object Notation, is a minimal, readable format for structuring data. It is used primarily to transmit data between a server and
+                                    web application, as an alternative to XML.
+                                </p>
+                                <h4>JSON Object</h4>
+                                <p>
+                                    A JSON object is made up of a key and value pair. A key is always enclosed in quotation marks and a value can be a string, number, boolean, array
+                                    or object.
+                                </p>
+                                <a href="http://www.json.org/" class="link-spacing" target="_blank">
+                                    Learn more about JSON &rarr;
+                                </a>
+                                <script type="application/json" id="stuff">
+                                    {
+                                    "unicorns": "awesome",
+                                    "abc": [1, 2, 3]
+                                    }
+                                </script>
+<pre>
+<code>
+    { 
+	"json_string": "object"
+	, "json_number": 4
+        , "json_bool": false
+        , "json_array": ["this", "is", "an", "array"]
+        , "json_obj" :{ "inner" : "value"}
+    }
+</code>
+</pre>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>Parsing JSON</h3>
+                                <p>
+                                    Most APIs will send back data as a stringified JSON object and it is important to know how to handle that data. By using JSON.parse(), which accepts
+                                    a stringified JSON object as an argument, you can loop through and extract the key and value of an object.
+                                </p>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" class="link-spacing" target="_blank">
+                                    Learn more about JSON.parse() &rarr;
+                                </a>
+                                <iframe width="100%" height="300" src="//jsfiddle.net/p6ypvd5a/4/embedded/js,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="section-trigger" href="#setup"><b>Continue to How it Works &darr;</b></a>
+            </div>
+        </div>
+    </section>
+    <section id="setup">
+        <div id="main-setup" class="container-fluid set-height-js display-flex-center">
+
+            <div class="col-xs-8 float-none center-block padding-40 bg-cl-000-op-9">
+                <div class="col-12">
+                    <h2 class="no-margin-top">How it Works</h2>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="single-item">
+                        <div>
+                            <div class="pv-20">
+                                <h3>Goal</h3>
+                                <p>
+                                    We will be looking at three API calls from the Pokeapi. Each successive call will be related to the other and is somewhat necessary
+                                    to get data from the other calls. The end goal is to demonstrate the ability to get all Pok&eacute;mon id and name, and use those values
+                                    in order to use other useful API calls.
+                                </p>
+                                <h4>1. GET /api/v2/pokedex/1/?name=national</h4>
+                                <h4>2. GET /api/v2/pokemon/{id or name}</h4>
+                                <h4>3. GET /api/v2/pokemon-habitat/{id or name}</h4>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>1. GET /api/v2/pokedex/1/?name=national</h3>
+                                <p>
+                                    This API call GETs all the Pok&eacute;mon in the Pok&eacute;dex, <i>national</i>. From the data returned, we can parse out id and name values for each
+                                    Pok&eacute;mon. Below is an example of how to make the call and parse the data. For the next call, we will be using the Pok&eacute;mon Bulbasaur whose id is 1.
+                                </p>
+                                <a href="https://pokeapi.co/docsv1/#pokedex" class="link-spacing" target="_blank">
+                                    <b>Read more documenation on Pokeapi &rarr;</b>
+                                </a>
+                                <iframe width="100%" height="300" src="//jsfiddle.net/urmeLyyf/2/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>1. JSON Response</h3>
+                                <p>
+                                    The full JSON response contains over 700 entries of Pok&eacute;mon, so this is an abbreviated JSON response.
+                                </p>
+                                <iframe width="100%" height="300" src="//jsfiddle.net/enhs7cmk/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>2. GET /api/v2/pokemon/{id or name}</h3>
+                                <p>
+                                    From the endpoint specification, the API call accepts either an id or name value. Using the id value of 1, which was prased from
+                                    the previous API call, we can now GET a specific Pok&eacute;mon's metadata. From parsing this call's data, we will be able to
+                                    use certain values to make even more API calls.
+                                </p>
+                                <a href="https://pokeapi.co/docsv2/#pokemon" class="link-spacing" target="_blank">
+                                    <b>Read more documenation on Pokeapi &rarr;</b>
+                                </a>
+                                <iframe width="100%" height="250" src="//jsfiddle.net/wpoLper2/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>2. JSON Response</h3>
+                                <iframe width="100%" height="300" src="//jsfiddle.net/h8nz1ke7/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>3. GET /api/v2/pokemon-habitat/{id or name}</h3>
+                                <p>
+                                    From the values parsed from the previous call, Bulbasaur's habitat
+                                    was <i>grassland</i>. This APi call will GET other Pok&eacute; who also have the same habitat.
+                                </p>
+                                <a href="https://pokeapi.co/docsv2/#pokemon-habitats" class="link-spacing" target="_blank">
+                                    <b>Read more documenation on Pokeapi &rarr;</b>
+                                </a>
+                                <iframe width="100%" height="300" src="//jsfiddle.net/4dae7rz3/1/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pv-20">
+                                <h3>3. JSON Response</h3>
+                                <iframe width="100%" height="300" src="//jsfiddle.net/aLmhheke/1/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <p>
+                    <a class="section-trigger" href="#demo"><b>Continue to Demo &darr;</b></a>
+                </p>
+
+            </div>
+        </div>
+    </section>
+    <section id="demo">
+        <div id="main-demo" class="container-fluid set-height-js display-flex-center">
+
+            <div class="col-xs-10 float-none center-block padding-40">
+                <div class="col-12">
+                    <h1>Demo</h1>
+                </div>
+
+                <div class="col-xs-10 loading-gif well">
+                    <img class="pikachu-loading" src="img/loading_gif.gif" />
+                    <span>Loading...</span>
+                </div>
+
+                <div class="col-xs-10 display-content">
+                    <div>
+                        <div id="page-content" class="well col-xs-12">
+                            <div id="page_1" class="pages"></div>
+                            <div id="page_2" class="pages"></div>
+                            <div id="page_3" class="pages"></div>
+                            <div id="page_4" class="pages"></div>
+                            <div id="page_5" class="pages"></div>
+                            <div id="page_6" class="pages"></div>
+                        </div>
+                        <ul id="pagination" class="pagination-sm"></ul>
+                    </div>
+                </div>
+                <div id="pokemon-display" class="col-xs-2 display-flex-center">
+
+                    <div class="loading-gif width-100per">
+                        <img class="pikachu-loading" src="img/loading_gif.gif" />
+                        <span>Loading...</span>
+                    </div>
+
+                    <div class="display-content">
+
+                        <div class="text-center">
+                            <img id="display-img" src="img/pokemon/1.png" />
+                            <h4 id="display-name">bulbasaur</h4>
+                        </div>
+                        <p>Habitat: <b><span id="display-habitat-1">grassland</span></b></p>
+                        <p>Other Pok&eacute;mon found in <b><span id="display-habitat-2">grassland</span></b></p>
+                        <ul id="display-species"></ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="pagination/jquery.twbsPagination.min.js"></script>
 </body>
 </html>
