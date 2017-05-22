@@ -212,7 +212,7 @@ function bindSectionClick() {
 //API call
 function getPokemon(id) {
     return $.ajax({
-        url: "http://pokeapi.co/api/v2/pokemon-species/" + id,
+        url: "https://pokeapi.co/api/v2/pokemon-species/" + id,
         method: "GET",
         dataType: "json"
     });
@@ -221,7 +221,7 @@ function getPokemon(id) {
 //API call
 function getHabitat(habitat) {
     return $.ajax({
-        url: "http://pokeapi.co/api/v2/pokemon-habitat/" + habitat,
+        url: "https://pokeapi.co/api/v2/pokemon-habitat/" + habitat,
         method: "GET",
         dataType: "json"
     });
@@ -230,7 +230,7 @@ function getHabitat(habitat) {
 //API call
 function getPokedex() {
     return $.ajax({
-        url: "http://pokeapi.co/api/v2/pokedex/1/?name=national",
+        url: "https://pokeapi.co/api/v2/pokedex/1/?name=national",
         method: "GET",
         timeout: 7000,
         cache: true
