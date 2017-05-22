@@ -293,9 +293,9 @@ $.ajax({
                             <div class="pv-20">
                                 <h3>Goal</h3>
                                 <p>
-                                    We will be looking at three API calls from the Pokeapi. Each successive call will be related to the other and is somewhat necessary
+                                    We will be looking at three API calls from the Pok&eacute;api. Each successive call will be related to the other and is necessary
                                     to get data from the other calls. The end goal is to demonstrate the ability to get all Pok&eacute;mon id and name, and use those values
-                                    in order to use other useful API calls.
+                                    in order to use the other API calls.
                                 </p>
                                 <h4>1. GET /api/v2/pokedex/1/?name=national</h4>
                                 <h4>2. GET /api/v2/pokemon/{id or name}</h4>
@@ -306,7 +306,7 @@ $.ajax({
                             <div class="pv-20">
                                 <h3>1. GET /api/v2/pokedex/1/?name=national</h3>
                                 <p>
-                                    This API call GETs all the Pok&eacute;mon in the Pok&eacute;dex, <i>national</i>. From the data returned, we can parse out id and name values for each
+                                    This API call GETs all the Pok&eacute;mon in the Pok&eacute;dex whose name is <i>national</i>. From the data returned, we can parse out id and name values for each
                                     Pok&eacute;mon. Below is an example of how to make the call and parse the data. For the next call, we will be using the Pok&eacute;mon Bulbasaur whose id is 1.
                                 </p>
                                 <a href="https://pokeapi.co/docsv1/#pokedex" class="link-spacing" target="_blank">
@@ -328,7 +328,7 @@ $.ajax({
                             <div class="pv-20">
                                 <h3>2. GET /api/v2/pokemon/{id or name}</h3>
                                 <p>
-                                    From the endpoint specification, the API call accepts either an id or name value. Using the id value of 1, which was prased from
+                                    This API call accepts either an id or name value. Using the id value of 1, which was prased from
                                     the previous API call, we can now GET a specific Pok&eacute;mon's metadata. From parsing this call's data, we will be able to
                                     use certain values to make even more API calls.
                                 </p>
@@ -349,7 +349,7 @@ $.ajax({
                                 <h3>3. GET /api/v2/pokemon-habitat/{id or name}</h3>
                                 <p>
                                     From the values parsed from the previous call, Bulbasaur's habitat
-                                    was <i>grassland</i>. This APi call will GET other Pok&eacute; who also have the same habitat.
+                                    was <i>grassland</i>. This API call will GET other Pok&eacute;mon who also have the same habitat.
                                 </p>
                                 <a href="https://pokeapi.co/docsv2/#pokemon-habitats" class="link-spacing" target="_blank">
                                     <b>Read more documenation on Pokeapi &rarr;</b>
